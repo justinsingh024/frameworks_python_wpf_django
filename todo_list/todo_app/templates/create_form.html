@@ -1,0 +1,95 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    
+    <link href="../../static/todo_app/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../..//static/todo_app/index.css">
+    <!-- Custom styles for this template -->
+    <link href="../../static/todo_app/detail.css" rel="stylesheet">     
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
+
+        header {
+            background-color: blue;
+            display: flex;
+            padding-left: 20px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            background-color: blue;
+            border: unset;
+            font-size: 32px;
+            color: white;
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+        }
+
+        .list-item {
+            background-color: white;
+            height: 60px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .list-item input[type="checkbox"] {
+            margin-right: 10px; /* Adjust the spacing here */
+        }
+    </style>
+        <title>Create ToDo</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+        <!-- Custom styles for this template -->
+        <link href="../static/todo_app/detail.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">   
+</head>
+
+<body>
+    <header>
+        <h1>Create ToDo</h1>
+    </header>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/todolist/">
+            <img src="../static/todo_app/HKA_Logo_Logoleiste_RGB.png" alt="..." height="36">
+          </a>
+      <ul class="navbar-nav ml-auto"> <!-- Changed 'mr-auto' to 'ml-auto' -->
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary" href="{% url 'logout' %}" style="background-color: white; color: black;">Logout</a> <!-- Added 'btn btn-primary' classes -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>
